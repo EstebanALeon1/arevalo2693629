@@ -18,6 +18,11 @@ repeticion = 0
 for i in lista:
     if i == num_teclado:
         repeticion += 1
+        while num_teclado in lista:
+            print(lista.index(i))
+            break
+            print(lista.index(i ))
+
         poscicion = lista[i]
     print(poscicion)
         
