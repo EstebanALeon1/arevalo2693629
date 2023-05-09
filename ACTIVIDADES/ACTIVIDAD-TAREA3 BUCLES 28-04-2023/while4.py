@@ -1,3 +1,4 @@
+
 num  = input("Digite un numero: ")
 numero_conver  = None
 flag = len(num)

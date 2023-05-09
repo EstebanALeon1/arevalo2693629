@@ -10,7 +10,3 @@ for i in range(2, 1001):
         
         
         
-#4while
-#4for        
-#determinar si dos numeros ingresados son amigos 
-#numero aleatorio de 1 a 100 se le pide al usuario que intente adivinar el numero == while
