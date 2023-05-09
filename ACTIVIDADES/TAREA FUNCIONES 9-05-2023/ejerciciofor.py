@@ -1,5 +1,4 @@
-#def solicita_numero():
- #   return int(input("Digite el numero hasta cual quiera saber si es primo: "))
+#crea una funcion que dice si un numero ingresado por el usuario es primo
 
 def numero_primo():
     num_primo = 0

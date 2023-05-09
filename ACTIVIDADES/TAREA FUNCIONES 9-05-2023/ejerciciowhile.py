@@ -1,3 +1,4 @@
+#genera la funcion para un juego el cual solicitara al usuario adivinar un numero y le dara pistas segun el numero ingresado
 import random
 def generar_numero_aleatorio():
     return random.randint(1, 100)
