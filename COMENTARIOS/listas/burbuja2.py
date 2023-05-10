@@ -4,8 +4,9 @@ lista=[random.randrange(100) for i in range(tam)] #se llena una lista por compre
 print(lista) #se imprime la lista 
 
 for i in range(len(lista)-1): #i en el rango len de lista - 1
-    if lista[i]<lista[i+1]: #compara lista en poscicion i con lista p
-        lista[i],lista[i+1]=lista[i+1],lista[i] #se realiza el intercambio de los numeros en una sola linea no hacefalta utilizar una variable aux
+    for j in range(i+1, tam): #j en el rango i+1 hasta tam
+        if lista[i]<lista[i+1]: #compara lista en poscicion i con lista p
+            lista[i],lista[i+1]=lista[i+1],lista[i] #se realiza el intercambio de los numeros en una sola linea no hacefalta utilizar una variable aux
 
 print(lista) #se imprime la lista 
     
