@@ -15,11 +15,15 @@
 #Llenar un arreglo de n elementos con números generados con la función random. N es 
 #ingresado por el usuario.
 import random
+def TamañoLista():
+    return int(input("digita el tamaño de la lista: "))
+usuario_tamaño_lista = TamañoLista()
 def LlenarArreglo(tam):
     lista=[random.randrange(100) for i in range(tam)]    
     return lista
-lista_1 = LlenarArreglo(int(input("Digite el tamaño de la lista: ")))
-print(lista_1)
+lista_1 = LlenarArreglo(usuario_tamaño_lista)
+print(f'la lista se lleno con los siguientes valores {lista_1}')
+
 
 
 #b. Suma
@@ -28,13 +32,13 @@ def SumaLista(lista):
     for x in lista:
         sum+=x
     return sum
-print(SumaLista(lista_1))
+print(f'La suma de todos los elementos de la lista es igual a {SumaLista(lista_1)}')
 
 
 #c. Promedio
 def PromedioLista(lista):
     return SumaLista(lista)/len(lista)
-print(PromedioLista(lista_1))
+print(f'El promedio de la lista es {PromedioLista(lista_1)}')
 
 
 #d. Mayor
@@ -44,7 +48,7 @@ def NumeroMayor(lista):
         if i > num_mayor:
             num_mayor = i
     return num_mayor
-print(NumeroMayor(lista_1))
+print(f'El numero mayor que esta en la lista es {NumeroMayor(lista_1)}')
 
 
 #e. Menor
@@ -54,7 +58,7 @@ def NumeroMenor(lista):
         if i < num_menor:
             num_menor = i
     return num_menor
-print(NumeroMenor(lista_1))
+print(f'El numero menor que esta en la lista es {NumeroMenor(lista_1)}')
 
 
 #f. Ordenar ascendente (No perder el arreglo original; el del punto a)
@@ -64,7 +68,7 @@ def OrdenarListaAscendente(lista):
             if lista[i]>lista[j]:
                 lista[i],lista[j]=lista[j],lista[i]
     return lista
-print(OrdenarListaAscendente(lista_1))
+print(f'La lista ordenada de forma ascendente es {OrdenarListaAscendente(lista_1)}')
 
 
 #g. Ordenar descendente (No perder el arreglo original; el del punto a)
@@ -74,7 +78,41 @@ def OrdenarListaDescendente(lista):
             if lista[i]<lista[j]:
                 lista[i],lista[j]=lista[j],lista[i]
     return lista
-print(OrdenarListaDescendente(lista_1))
+print(f'La lista ordenada de forma descendente es {OrdenarListaDescendente(lista_1)}')
 
 
 #h. Moda
+contador = 0
+mayor = 0
+def Moda(lista):
+    OrdenarListaAscendente(lista)
+    contador = 0
+    mayor = 0
+    for i in range(usuario_tamaño_lista):
+        contador = 0
+        for j in range(usuario_tamaño_lista):
+            if lista[i] == lista[j]:
+                contador += 1
+        if contador > mayor:
+            mayor = contador
+            moda = lista[i]
+        elif mayor<=1:
+            moda = 0
+    if moda != 0:
+        print('la moda es ', moda)
+    else:
+        print('no hay moda en esta lista ya que ningun numero se repite')
+Moda(lista_1)
+
+
+#i. Mediana
+def Mediana(lista):
+    OrdenarListaAscendente(lista)
+    mediana = 0
+    if usuario_tamaño_lista % 2 == 0:
+        mediana = round(((lista[(len(lista)//2)-1]) + (lista[(len(lista)//2)]))/2,2)
+        print(f"La mediana de la lista es {mediana}")
+    else:    
+        mediana = lista[(len(lista)//2)]
+        print(f"La mediana de la lista es {mediana}")
+Mediana(lista_1)
