@@ -37,6 +37,6 @@ FunDicciEsp_Ing(diccionario_esp_ing)
 FunDicciIng_Esp(diccionario_ing_esp)
 #Codifique funciones para alamacenar en tuplas de cada diccionario todos los animales en español y en ingles respectivamente. 
 def TuplaDiccioEsp_Ing(diccionario):
-    for x in diccionario.values:
+    for x in diccionario.items():
         print(f"la clave es {x[0]} y su valor es {x[1]}")
 TuplaDiccioEsp_Ing(diccionario_esp_ing)
